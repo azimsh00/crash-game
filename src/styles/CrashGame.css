@@ -1,0 +1,300 @@
+/* CrashGame.css */
+.crash-game-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  .message {
+    background-color: #f8f9fa;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .game-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .crash-animation {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    background-color: #222;
+    border-radius: 8px;
+  }
+  
+  .waiting {
+    font-size: 24px;
+    color: #fff;
+    text-align: center;
+    animation: blink 1.5s infinite;
+  }
+  
+  .multiplier-display {
+    font-size: 40px;
+    font-weight: bold;
+    transition: transform 0.1s ease-out, font-size 0.1s ease-out;
+  }
+  
+  .crashed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #ff3333;
+    animation: shake 0.5s;
+  }
+  
+  .crash-text {
+    font-size: 24px;
+  }
+  
+  .crash-value {
+    font-size: 48px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+  
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-10px); }
+    40%, 80% { transform: translateX(10px); }
+  }
+  
+  .player-status {
+    margin-bottom: 20px;
+    padding: 15px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 5px;
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  .player-status.won {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+  }
+  
+  .player-status.lost {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+  }
+  
+  .bet-controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .bet-amount, .auto-cashout {
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4a90e2;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  button:hover {
+    background-color: #357ae8;
+  }
+  
+  button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  .cashout-button {
+    background-color: #28a745;
+    font-weight: bold;
+    min-width: 200px;
+    animation: pulse 1.5s infinite;
+  }
+  
+  .cashout-button:hover {
+    background-color: #218838;
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
+  .players-list {
+    margin-top: 30px;
+    width: 100%;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+  }
+  
+  tr:hover {
+    background-color: #f5f5f5;
+  }
+  
+  /* Login Form Styles */
+  .login-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .login-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .login-form > div {
+    margin-bottom: 15px;
+  }
+  
+  .login-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .buttons button {
+    width: 48%;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .bet-amount, .auto-cashout {
+      min-width: 100%;
+    }
+    
+    .buttons {
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .buttons button {
+      width: 100%;
+    }
+  }
+
+  .play-now-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 20px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .play-now-button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+  }
+  
+  .play-now-button:active {
+    transform: scale(0.98);
+  }
+  
+  .login-container {
+    text-align: center;
+    padding: 40px;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .login-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 28px;
+  }
+  
+  .login-container p {
+    margin-bottom: 25px;
+    color: #666;
+    font-size: 16px;
+  }

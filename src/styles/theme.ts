@@ -1,0 +1,27 @@
+export const theme = {
+    colors: {
+        primary: '#0096FF',
+        primaryLight: '#33ADFF',
+        primaryDark: '#0078CC',
+        secondary: '#8039FF',
+        secondaryLight: '#A66FFF',
+        secondaryDark: '#6A30D9',
+        success: '#4CAF50',
+        warning: '#FF9800',
+        danger: '#F44336',
+        dark: '#1A1A1A',
+        darkGrey: '#282C34',
+        mediumGrey: '#3A3F4B',
+        lightGrey: '#4E5563',
+        textPrimary: '#FFFFFF',
+        textSecondary: '#CCCCCC',
+        textTertiary: '#999999',
+        buttonPrimary: '#8039FF', // Purple for bet buttons
+        buttonGreen: '#4CAF50',
+        gradientStart: '#0096FF',
+        gradientEnd: '#8039FF',
+    },
+    borderRadius: '8px',
+    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.2)',
+    fontFamily: `'Roboto', 'Segoe UI', sans-serif`,
+};

@@ -1,0 +1,48 @@
+{
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null",
+    "connectivity_tests": {
+      ".read": true,
+      ".write": true
+    },
+    "debug": {
+      ".read": true,
+      ".write": true
+    },
+    "permission_test": {
+      ".read": true,
+      ".write": true
+    },
+    "games": {
+      ".read": true,
+      ".write": "auth != null",
+      "$gameId": {
+        ".read": true,
+        ".write": "auth != null",
+        "players": {
+          "$playerId": {
+            ".read": true,
+            ".write": "auth != null && ($playerId === auth.uid || root.child('admins').child(auth.uid).exists())"
+          }
+        }
+      }
+    },
+    "users": {
+      "$userId": {
+        ".read": "auth != null && ($userId === auth.uid || root.child('admins').child(auth.uid).exists())",
+        ".write": "auth != null && ($userId === auth.uid || root.child('admins').child(auth.uid).exists())",
+        "balance": {
+          ".validate": "newData.isNumber() && newData.val() >= 0"
+        },
+        "username": {
+          ".validate": "newData.isString() && newData.val().length > 0"
+        }
+      }
+    },
+    "game_results": {
+      ".read": true,
+      ".write": "auth != null"
+    }
+  }
+}
